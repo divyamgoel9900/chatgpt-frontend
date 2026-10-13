@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatGPT UI — Frontend Project</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <a class="brand" href="#" aria-label="Home">
+          <span class="brand-mark">✳</span><span class="brand-name">ChatGPT</span>
+        </a>
+        <button class="icon-button collapse-button" id="closeSidebar" aria-label="Close sidebar">‹</button>
+      </div>
+
+      <button class="new-chat" id="newChat"><span class="plus">＋</span> New chat</button>
+      <button class="nav-item" id="searchChats"><span>⌕</span> Search chats</button>
+      <button class="nav-item"><span>▤</span> Library</button>
+
+      <div class="history">
+        <p class="section-label">Your chats</p>
+        <button class="history-item active">Getting started with ChatGPT</button>
+        <button class="history-item">Ideas for a weekend project</button>
+        <button class="history-item">Explain JavaScript simply</button>
+        <button class="history-item">Study plan for exams</button>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="upgrade-card">
+          <div class="upgrade-icon">✦</div>
+          <div><strong>Upgrade your plan</strong><p>Get more out of ChatGPT</p></div>
+        </div>
+        <button class="profile">
+          <span class="avatar">DG</span>
+          <span class="profile-text"><strong>Divyam</strong><small>Free plan</small></span>
+          <span class="more">•••</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="openSidebar" aria-label="Open sidebar">☰</button>
+        <button class="model-picker">ChatGPT <span class="muted">▾</span></button>
+        <div class="topbar-actions">
+          <button class="share-button" id="shareButton">↗ <span>Share</span></button>
+          <button class="icon-button" id="moreButton" aria-label="More options">•••</button>
+        </div>
+      </header>
+
+      <section class="conversation" id="conversation">
+        <div class="welcome" id="welcome">
+          <div class="welcome-symbol">✳</div>
+          <h1>What can I help with?</h1>
+          <p class="welcome-subtitle">Ask anything, brainstorm an idea, or start learning something new.</p>
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+      </section>
+
+      <footer class="composer-area">
+        <div class="suggestions" id="suggestions">
+          <button class="suggestion" data-prompt="Explain HTML, CSS, and JavaScript in simple terms."><span>⌘</span> Learn something</button>
+          <button class="suggestion" data-prompt="Give me three creative website project ideas for a beginner."><span>✎</span> Make a plan</button>
+          <button class="suggestion" data-prompt="Write a short, friendly introduction about me for a student portfolio."><span>✧</span> Write something</button>
+        </div>
+        <form class="composer" id="chatForm">
+          <textarea id="promptInput" rows="1" placeholder="Message ChatGPT" aria-label="Message ChatGPT"></textarea>
+          <div class="composer-tools">
+            <div class="left-tools">
+              <button type="button" class="tool-button" id="attachButton" title="Attach file (demo only)">＋</button>
+              <button type="button" class="tool-button tool-label" id="toolsButton">⚙ Tools <span>▾</span></button>
+            </div>
+            <div class="right-tools">
+              <button type="button" class="tool-button voice-button" title="Voice (demo only)">♩</button>
+              <button type="submit" class="send-button" id="sendButton" aria-label="Send message">↑</button>
+            </div>
+          </div>
+        </form>
+        <p class="disclaimer">This is a student-made frontend demo. It does not connect to the real ChatGPT AI.</p>
+      </footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
